@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+}
+
+main {
+  padding: 1rem;
+  margin: auto;
+}
+
+.main-header {
+  width: 100%;
+  height: 3.5rem;
+  background-color: #2c457c;
+  padding: 0 1.5rem;
+}
+
+.main-header__nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.main-header__item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.main-header__item {
+  margin: 0 1rem;
+  padding: 0;
+}
+
+.main-header__item a {
+  text-decoration: none;
+  color: white;
+}
+
+.main-header__item a:hover,
+.main-header__item a:active,
+.main-header__item a.active {
+  color: #ffeb3b;
+}
+
+.first-flexbox-segment {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.print-page {
+  position: relative;
+  margin: auto;
+  width: 220mm;
+  padding-left: 8mm;
+  padding-right: 8mm;
+}
+
+.ime-zapisnika {
+  position: relative;
+}
+
+.ime-zapisnika .table-1 {
+  border-collapse: collapse;
+}
+
+.ime-zapisnika .table-1 tr,
+.ime-zapisnika .table-1 td {
+  border: 1px solid black;
+  padding: 3px 5px 3px 5px;
+}
+
+.ime-zapisnika h3 {
+  position: relative;
+  font-size: 22pt;
+  margin-top: -4px;
+}
+
+.ime-zapisnika span {
+  font-size: 12pt;
+}
+
+.motoplus-zaglavlje {
+  position: relative;
+  text-align: right;
+}
+
+.motoplus-zaglavlje .ime-firme {
+  font-size: 16pt;
+  font-weight: bold;
+  margin-bottom: -10px;
+}
+
+.motoplus-zaglavlje .podaci-firme {
+  font-size: 11pt;
+}
+
+.prvi-segment {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.prvi-segment .table-2 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.prvi-segment .table-2 tr,
+.prvi-segment .table-2 td {
+  border: 1px solid black;
+  padding: 3px 5px 3px 5px;
+}
+
+.opis-rezultata {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.opis-rezultata p {
+  font-size: 6pt;
+  text-align: justify;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.drugi-segment {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.drugi-segment .table-3 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.drugi-segment .table-3 th,
+.drugi-segment .table-3 tr,
+.drugi-segment .table-3 td {
+  border: 1px solid black;
+  padding: 3px 5px 3px 5px;
+}
+
+.drugi-segment .table-3 td {
+  font-size: 11pt;
+  padding: 3px 5px 3px 5px;
+}
+
+.treci-segment {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.treci-segment .table-4 {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.treci-segment .table-4:first-child {
+  margin-bottom: 5px;
+}
+
+.treci-segment .table-4 tr,
+.treci-segment .table-4 td {
+  border: 1px solid black;
+  padding: 3px 5px 3px 5px;
+}
+
+.servicer__note td p {
+  display: table;
+  font-size: 10pt;
+  text-align: justify;
+  margin-left: 4mm;
+  margin-right: 3mm;
+  /* padding-left: 10px;
+  padding-right: 10px; */
+}
+
+.servicer__advice {
+  padding-right: 10px;
+}
+
+.servicer__advice li {
+  text-align: justify;
+  display: table;
+  font-size: 10pt;
+  margin-left: -7mm;
+}
+
+.servicer__advice li p {
+  margin: 5px 0;
+}
+
+.potpis-pecat {
+  position: relative;
+  padding-left: 10px;
+}
+
+.potpis-pecat p {
+  line-height: 180%;
+  font-size: 11pt;
+  text-align: right;
+}
+
+.print-btn {
+  position: fixed;
+  left: 5px;
+  top: 100px;
+}
+
+.save-to-pdf {
+  top: 150px !important;
+}
+
+.save-to-pdf-compldec {
+  top: 200px !important;
+}
+
+.print-btn a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #2c457c;
+  background-color: white;
+  color: #2c457c;
+  transition-duration: 0.4s;
+  width: 165px;
+}
+
+.print-btn a:hover {
+  color: #ffeb3b;
+  background-color: #2c457c;
+  border-color: #2c457c;
+  cursor: pointer;
+}
+
+.text-align__items {
+  text-align: center;
+}
+
+@media print {
+  .print-btn {
+    visibility: hidden;
+  }
+
+  .print-page {
+    position: relative;
+    top: -3rem;
+  }
+
+  .main-header {
+    visibility: hidden;
+  }
+  
+  @page {
+    margin-bottom: 1cm;
+  }
+
+  @page :left {
+    margin-top: 1cm;
+  }
+}

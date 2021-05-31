@@ -1,0 +1,13 @@
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize(process.env.MYSQL_DATABASE, process.env.MYSQL_USER, process.env.MYSQL_PASSWORD, {
+  dialect: 'mysql',
+  // dialectOptions: {
+  //   charset: 'latin1',
+  //   collate: 'latin1_swedish_ci',
+  // },
+  host: process.env.MYSQL_HOST,
+  port: process.env.MYSQL_PORT,
+});
+
+module.exports = sequelize;

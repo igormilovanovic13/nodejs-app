@@ -1,0 +1,41 @@
+{
+  "name": "battery-warranty-handler",
+  "version": "1.0.0",
+  "description": "Aplikacija za resavanje reklamacije akumulatora.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=development MYSQL_DATABASE=database MYSQL_USER=username MYSQL_PASSWORD=password MYSQL_HOST=xxx.xxx.xxx.xxx MYSQL_PORT=port CREATE_PDF_GO_TO=http://localhost:3000/login CREATE_PDF_USER_EMAIL=email CREATE_PDF_PASSWORD=password CREATE_PDF_URL=http://localhost:3000/add-complaint/report-page SENDGRID_API_KEY=api_key DOMAIN_URL=http://localhost:3000 node app.js",
+    "start-server": "node app.js",
+    "start:dev": "nodemon app.js"
+  },
+  "author": "Igor Milovanovic",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-session-sequelize": "^7.1.1",
+    "cross-env": "^7.0.3",
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.10.0",
+    "helmet": "^4.5.0",
+    "jimp": "^0.16.1",
+    "lightbox2": "^2.11.3",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "nodemailer": "^6.5.0",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "open": "^8.0.4",
+    "pdfkit": "^0.11.0",
+    "puppeteer": "^8.0.0",
+    "sequelize": "^6.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

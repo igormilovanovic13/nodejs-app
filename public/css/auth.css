@@ -1,0 +1,38 @@
+.record__list {
+  width: 20rem !important;
+}
+
+.center-image {
+  display: block;
+  margin: 0 auto;
+}
+
+.center-btn {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.center-btn button {
+  width: 8rem;
+}
+
+.reset-btn {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.reset-btn button {
+  width: 10rem;
+}
+
+.centered {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.centered a {
+  text-decoration: none;
+  color: black;
+}

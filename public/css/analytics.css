@@ -1,0 +1,67 @@
+main {
+  margin: 0;
+}
+
+#header-paragraph {
+  display: block;
+  text-align: center;
+  font-size: 24pt;
+  color: #2b447c;
+  margin: 0 0 10px 0;
+}
+
+section div p {
+  display: block;
+  width: 100%;
+  border-top: 2px solid #2b447c;
+  color: #2b447c;
+  text-align: center;
+  font-size: 22pt;
+  margin: 0;
+}
+
+.total-qty {
+  border-bottom: 1px solid #2b447c;
+  color: #2b447c;
+  font-size: 14pt;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+
+.monthly-sales-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.monthly-sales-list-item {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 8px;
+  min-width: 60px;
+  border-radius: 5px;
+}
+
+.monthly-sales-list-item span {
+  display: block;
+  width: 100%;
+  padding: 5px;
+}
+
+.monthly-sales-list span:first-of-type {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.monthly-sales-list-item:nth-child(even) {
+  background-color: rgb(218, 218, 218);
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.monthly-sales-list-item:nth-child(odd) {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(218, 218, 218);
+}

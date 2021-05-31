@@ -1,0 +1,100 @@
+button:focus {
+  outline: none;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.my-modal {
+  position: fixed;
+  z-index: 100;
+  width: 80%;
+  top: 10vh;
+  left: 10%;
+  display: none;
+  border-radius: 10px;
+}
+
+.my-modal.visible {
+  display: block;
+  animation: fade-slide-in 0.3s ease-out forwards;
+}
+
+.my-modal .modal__title {
+  margin: 0;
+  padding: 1rem;
+  border-bottom: 1px solid #00329e;
+  background: #00329e;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.my-modal .modal__content {
+  padding: 1rem;
+}
+
+.my-modal .modal__actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.text-align__items {
+  text-align: center;
+}
+
+.partner-info input {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.align-items__center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.align-items__center input {
+  text-align: center;
+}
+
+#backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+  pointer-events: none;
+  display: none;
+}
+
+#backdrop.visible {
+  display: block;
+  pointer-events: all;
+}
+
+#add-modal .modal__content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .my-modal {
+    width: 40rem;
+    left: calc(50% - 20rem);
+  }
+}
+
+@keyframes fade-slide-in {
+  from {
+    transform: translateY(-5rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

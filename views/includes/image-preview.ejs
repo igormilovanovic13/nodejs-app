@@ -1,0 +1,13 @@
+<div class="row" data-recordid="<%= record.id %>">
+    <div class="col-sm-4">
+        <label for="status" class="col-form-label">Slike:</label>
+    </div>
+    <div class="col-sm-8">
+    <% for(let i = 1; i < 9; i++) {
+        if(record.noteAndAdvice['picture' + i]) { %>
+            <a href="<%= record.noteAndAdvice['picture' + i].split('public')[1] %>" class="slideshow-image" data-lightbox="image-set-<%= record.id %>">
+                <img src="<%= record.noteAndAdvice['picture' + i].split('public')[1] %>" alt="Slika_<%= i %>" class="small-pic">
+            </a>
+    <% }} %>
+    </div>
+</div><br>

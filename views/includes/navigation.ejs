@@ -1,0 +1,58 @@
+<header class="main-header">
+  <nav class="main-header__nav">
+    <ul class="main-header__item-list">
+      <li class="main-header__item">
+        <a class="<%= path === '/analytics' ? 'active' : '' %>" href="/analytics">Analitika</a>
+      </li>
+      <li class="main-header__item">
+        <a
+          class="<%= path === '/complaints-list' ? 'active' : '' %>"
+          href="/complaints-list"
+          >Završene</a
+        >
+      </li>
+      <li class="main-header__item">
+        <a
+          class="<%= path === '/for-verification' ? 'active' : '' %>"
+          href="/for-verification"
+          >Neodobrene</a
+        >
+      </li>
+      <li class="main-header__item">
+        <a
+          class="<%= path === '/verified' ? 'active' : '' %>"
+          href="/verified"
+          >Odobrene</a
+        >
+      </li>
+      <li class="main-header__item">
+        <a
+          class="<%= path === '/add-partner' ? 'active' : '' %>"
+          href="/add-complaint/add-partner"
+          >Dodaj</a
+        >
+      </li>
+    </ul>
+    <ul class="main-header__item-list">
+      <% if(!isAuthenticated) { %>
+      <li class="main-header__item">
+        <a class="<%= path === '/login' ? 'active' : '' %>" href="/login"
+          >Uloguj se</a
+        >
+      </li>
+      <!-- <li class="main-header__item">
+        <a class="<%= path === '/signup' ? 'active' : '' %>" href="/signup"
+          >Registruj se</a
+        >
+      </li> -->
+      <% } else { %>
+      <li class="main-header__item">
+        <form action="/logout" method="post">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <button type="submit">Izloguj se</button>
+        </form>
+      </li>
+      <% } %>
+    </ul>
+  </nav>
+</header>

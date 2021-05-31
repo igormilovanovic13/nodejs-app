@@ -1,0 +1,82 @@
+<%- include('../../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/record-list.css">
+<link rel="stylesheet" href="/css/modal.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<body>
+    <%- include('../../includes/navigation.ejs') %>
+    <main id="main">
+        <div id="backdrop"></div>
+        <div class="record__list-header">
+            <h1><%= message %></h1>
+        </div>
+        <div class="for-appending">
+            <ul class="record__list">
+                <li class="record__item">
+                    <div class="form-gruop row align-items__center">
+                        <label for="partnerInput" id="partnerInputLabel" class="col-sm-6 col-form-label">PIB partnera: </label>
+                    </div>
+                    <div class="form-gruop row align-items__center">
+                        <div class="col-sm-6">
+                            <input type="text" name="partnerInput" id="partnerInput" class="form-control" placeholder="Unesite PIB">
+                        </div>
+                    </div><br>
+                    <div class="form-gruop row align-items__center">
+                        <div class="col-sm-6">
+                            <button type="button" id="ajax-btn" class="btn btn-success mb-2 btn-lg">Pronađi partnera</button>
+                        </div>
+                    </div>
+                    
+                </li>
+            </ul>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        </div>
+
+        <template>
+            <div class="my-modal" id="add-modal">
+                <form action="/add-complaint/add-partner" method="POST">
+                    <input type="hidden" name="partnerPIB" value="partnerData.code">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal__content modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-align__items">Da li je ovo partner za kojeg otvarate reklamacijski zapisnik?</h4>
+                                </div>
+                                <div class="control modal-body">
+                                    <div class="partner-info">
+                                        <input type="text" class="form-control text-align__items" id="ime-partnera" readonly>
+                                        <input type="text" class="form-control text-align__items" id="adresa-partnera" readonly>
+                                        <input type="text" class="form-control text-align__items" id="grad-partnera" readonly>
+                                        <input type="email" class="form-control text-align__items" id="email-partnera" name="emailPartnera" required>
+                                    </div>
+                                </div>
+                                <div class="modal__actions modal-footer">
+                                    <button class="btn btn--passive btn-secondary" type="button">Odustani</button>
+                                    <button class="btn btn--success btn-success" id="add-partner" type="submit">Dodaj</button>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </template>
+        
+        <template>
+            <div class="my-modal" id="add-modal">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal__content modal-content">
+                        <div class="modal-body">
+                            <div class="control">
+                                <h3 class="text-align__items" id="partnerPIB"></h3>
+                                <h3 class="text-align__items">Partner sa unetim PIB-om nije pronađen u bazi!</h3>
+                            </div>
+                        </div>
+                        <div class="modal__actions modal-footer">
+                            <button class="btn btn--passive btn-secondary">Pokušaj ponovo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </main>
+    <script src="/scripts/create-record/collect-partner-data.js"></script>
+    <%- include('../../includes/end.ejs') %>

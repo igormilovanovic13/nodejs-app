@@ -1,0 +1,17 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/analytics.css">
+</head>
+
+<body>
+
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <section id="monthly-sales">
+            <p id="header-paragraph">Prodaja u tekućoj i prethodne 2. godine</p>
+            <div>
+            </div>
+        </section>
+    </main>
+    <script src="/scripts/get-analytics-data.js"></script>
+<%- include('../includes/end.ejs') %>
